@@ -6,13 +6,12 @@ const ReviewPanel = () => {
             <span className="uppercase font-['Gilroy-Medium'] px-[15px] text-[12px] tracking-[1.6px] ">
                 review
             </span>
-            <div className='flex flex-col gap-[10px] p-[20px] mt-[5px]'>
-                <div className='flex flex-col gap-[5px]'>
+            <div className='flex flex-col md:flex-row lg:flex-col  gap-[10px] p-[20px] mt-[5px]'>
+                <div className='flex flex-col gap-[5px] md:w-[50%] lg:w-[100%]'>
                     <h2 className="font-['Gilroy-SemiBold'] font-[400] text-[22px] text-[#1F1F1F] tracking-[0.6px] leading-[100%] align-middle">Your security system</h2>
                     <p className="leading-[130%]  tracking-[0.6px] font-['Gilroy-Medium'] text-[14px] text-[#1F1F1FBF] font-[400]">
                         Review your personalized protection system designed to keep what matters most safe.
                     </p>
-                </div>
                 <div className='border-t-[1px] border-[#CED6DE] flex flex-col gap-[8px]'>
                     <h4 className="mt-[16px] font-['Gilroy-Regular'] text-[#A8B2BD] text-[12px] uppercase leading-[16px] tracking-[3%] font-[400]">CAMERAS</h4>
                     <div className="flex flex-row justify-between items-center w-full gap-[12px]">
@@ -45,7 +44,6 @@ const ReviewPanel = () => {
                         </div>
                     </div>
                 </div>
-                {<div className='border-t-[1px] border-[#CED6DE] flex flex-col gap-[8px]'>
                     <div className="flex flex-row justify-between items-center w-full gap-[12px] pt-[15px]">
                         <div className="flex flex-row items-center justify-start gap-[12px] min-w-0 flex-1">
                             <div className="w-[41px] h-[41px] bg-white shrink-0 rounded-[5px] overflow-hidden flex items-center justify-center">
@@ -68,18 +66,27 @@ const ReviewPanel = () => {
                             </div>
                         </div>
                     </div>
-                </div>}
-                <div className='flex flex-col gap-[8px]'>
-                <div className=' flex flex-col gap-[8px]'>
-                    <div className="flex flex-row justify-between items-center w-full gap-[12px] pt-[15px]">
+                </div>
+                <div className='border-t-[1px] border-[#CED6DE] flex flex-col gap-[8px]'>
+                </div>
+                <div className='flex flex-col gap-[8px] md:w-[50%] lg:w-[100%]'>
+                <div className=' flex flex-col  gap-[8px]'>
+                    <div className="flex flex-row md:flex-col lg:flex-row justify-between items-center w-full gap-[12px] pt-[15px]">
                         <div className="flex flex-row items-center justify-between gap-[12px] min-w-0 flex-1">
-                            <div className="w-[78px] h-[78px]  shrink-0  overflow-hidden flex items-center justify-center">
+                            <div className="w-[78px] h-[78px] md:w-[131px] md:h-[131px] lg:w-[78px] lg:h-[78px]  shrink-0  overflow-hidden flex items-center justify-center">
                                 <img src='/images/Badge.png' className=''></img>
                             </div>
+                            <div className="hidden md:inline lg:hidden text-[#1F1F1F] align-middle tracking-[0.6px] flex flex-col py-[25.5px] font-['Gilroy-SemiBold'] font-[400] text-[18px] leading-[110.00000000000001%]">
+                               30-day hassle-free returns
+                                <span className='font-["Gilroy-Regular"] text-[18px] align-middle tracking-[0.6px]'>
+                                    <pre>                     </pre>
+                                </span>
+                         If you're not totally in love with the product, we will refund you 100%.
+                            </div>
                         </div>
-                        <div className="flex flex-col justify-end  gap-[8px] shrink-0">
+                        <div className="flex flex-col justify-end md:flex-row lg:flex-col md:justify-between md:items-center lg:items-end lg:justify-end gap-[8px] shrink-0 w-full">
                             <div className='flex justify-end'> <span className='bg-[#4E2FD2] px-[8px] py-[5px] rounded-[3px]  text-[12px] leading-[100%] text-[#FFFFFF] tracking-[-5%] font-["Gilroy-Medium"]'>as low as $19.19/mo</span></div>
-                            <div className="flex flex-row items-center gap-[8px] justify-center">
+                            <div className="flex flex-row items-center gap-[8px] justify-end ">
                                 <span className="align-middle text-center text-[18px] leading-[20px] tracking-[0.25%] font-['Gilroy-Medium'] font-[400] text-[#6F7882] line-through">$238.81</span>
                                 <span className="text-[24px] leading-[32px] tracking-[-0.13%] align-middle text-right font-[400] font-['Gilroy-Bold'] text-[#4E2FD2]">$187.89</span>
                             </div>
