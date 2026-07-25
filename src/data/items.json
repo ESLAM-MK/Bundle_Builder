@@ -1,0 +1,133 @@
+
+   {
+  "camera": [
+    {
+      "id": "1",
+      "title": "Wyze Cam v4",
+      "description": "The clearest Wyze Cam ever made.",
+      "learnMoreUrl": "#",
+      "discountPercentage": 22,
+      "compareAtPrice": 35.98,
+      "price": 27.98,
+      "image": "/images/Wyze Cam v4.png",
+      "hasVariants": true,
+      "variants": [
+        { "id": "1-white", "label": "White", "image": "/images/white1.png" },
+        { "id": "1-grey", "label": "Grey", "image": "/images/Grey.png" },
+        { "id": "1-black", "label": "Black", "image": "/images/black1.png" }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Wyze Cam Pan v3",
+      "description": "360° pan and 180° tilt security camera.",
+      "learnMoreUrl": "#",
+      "discountPercentage": 12,
+      "compareAtPrice": 53.98,
+      "price": 47.98,
+      "image": "/images/Wyze Cam Pan v3.png",
+      "hasVariants": true,
+      "variants": [
+        { "id": "2-white", "label": "White", "image": "/images/white2.png" },
+        { "id": "2-black", "label": "Black", "image": "/images/black2.png" }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Wyze Cam Floodlight v2",
+      "description": "2K floodlight camera with a 160° wide-angle view for your garage.",
+      "learnMoreUrl": "#",
+      "discountPercentage": 22,
+      "compareAtPrice": 89.98,
+      "price": 69.98,
+      "image": "/images/Wyze Cam Floodlight v2.png",
+      "hasVariants": true,
+      "variants": [
+        { "id": "3-white", "label": "White", "image": "/images/white3.png" },
+        { "id": "3-black", "label": "Black", "image": "/images/black3.png" }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Wyze Duo Cam Doorbell",
+      "description": "Two cameras. Two views. Double the porch protection.",
+      "learnMoreUrl": "#",
+      "discountPercentage": null,
+      "compareAtPrice": null,
+      "price": 69.98,
+      "image": "/images/Wyze Duo Cam Doorbell.png",
+      "hasVariants": false,
+      "variants": []
+    },
+    {
+      "id": "5",
+      "title": "Wyze Battery Cam Pro",
+      "description": "Protect anywhere. See everything in 2.5K HDR. No power outlet needed.",
+      "learnMoreUrl": "#",
+      "discountPercentage": null,
+      "compareAtPrice": null,
+      "price": 89.98,
+      "image": "/images/Wyze Battery Cam Pro.png",
+      "hasVariants": true,
+      "variants": [
+        { "id": "5-white", "label": "White", "image": "/images/white5.png" },
+        { "id": "5-black", "label": "Black", "image": "/images/black5.png" }
+      ]
+    }
+  ],
+  "plan": [
+    {
+      "id": "6",
+      "title": "Cam Unlimited",
+      "description": "Unlimited cameras, 14-day cloud recording & smart AI alerts.",
+      "learnMoreUrl": "#",
+      "discountPercentage": 23.09,
+      "compareAtPrice": 12.99,
+      "price": 9.99,
+      "isMonthly": true,
+      "image": "https://placehold.co/150x150/f3f4f6/1f2937?text=Cam+Unlimited",
+      "hasVariants": false,
+      "variants": []
+    }
+  ],
+  "sensors": [
+    {
+      "id": "7",
+      "title": "Wyze Sense Motion Sensor",
+      "description": "Detects human motion up to 25 feet away.",
+      "learnMoreUrl": "#",
+      "discountPercentage": null,
+      "compareAtPrice": null,
+      "price": 59.98,
+      "image": "/images/Wyze Sense Motion Sensor.png",
+      "hasVariants": false,
+      "variants": []
+    },
+    {
+      "id": "8",
+      "title": "Wyze Sense Hub (Required)",
+      "description": "Connects all your sensors to the Wyze app.",
+      "learnMoreUrl": "#",
+      "discountPercentage": 100,
+      "compareAtPrice": 29.92,
+      "price": 0.00,
+      "image": "/images/Wyze Sense Hub (Required).png",
+      "hasVariants": false,
+      "variants": []
+    }
+  ],
+  "accessories": [
+    {
+      "id": "9",
+      "title": "Wyze MicroSD Card (256GB)",
+      "description": "Continuous local video recording for your cameras.",
+      "learnMoreUrl": "#",
+      "discountPercentage": null,
+      "compareAtPrice": null,
+      "price": 41.96,
+      "image": "/images/Wyze MicroSD Card (256GB).png",
+      "hasVariants": false,
+      "variants": []
+    }
+  ]
+}
