@@ -1,7 +1,9 @@
 **Project Setup & Installation**
-Prerequisites:
+***Prerequisites:***
+
 
 - Node.js (v18.x or higher)
+
   
 - npm or yarn 
 
