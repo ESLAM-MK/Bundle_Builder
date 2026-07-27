@@ -11,9 +11,9 @@ Prerequisites:
     
     - cd Bundle_Builder
     
- ***2. Install dependencies***:
+ ***2. Install dependencies:***:
  
-   - npm install
+     - npm install
 
 ***3. Start the Server (json server)***:
 
