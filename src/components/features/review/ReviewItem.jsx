@@ -20,8 +20,8 @@ const ReviewItem = ({ selected }) => {
                     {`${selected.product.title} ${selected.variant?.color ? selected.variant.color : ""}`}
                 </h3>
             </div>
-            <div className="flex flex-row justify-end items-center gap-[16px] shrink-0">
-                <div className="flex items-center justify-center gap-[10px] py-[4px] rounded-[4px] w-[80px] select-none">
+            <div className="flex flex-row justify-end items-center  gap-[16px] shrink-0">
+                <div className="flex items-center justify-center gap-[10px] py-[4px] rounded-[4px] w-[80px] select-none ">
                     <button onClick={() => changeQuantity(selected.product, "decrement")} className={`${selected.quantity === 0 ? "border-[2px] border-[#E6EBF0] bg-[#FFFFFF]" : "bg-[#F0F4F7]"}  h-[20px] w-[20px] text-[16px] font-bold text-center cursor-pointer  text-xs leading-none rounded-[4px] flex items-center justify-center pb-[2px] shadow-lg`}>
                         -
                     </button>
@@ -34,7 +34,7 @@ const ReviewItem = ({ selected }) => {
                 </div>
 
                 <div className="flex flex-col items-end justify-center">
-                    <PriceTag compareAtPrice={selected.product.compareAtPrice} discountPercentage={selected.product.discountPercentage} quantity={selected.quantity} color2='#4E2FD2' color1='#6F7882' />
+                    <PriceTag compareAtPrice={selected.product.compareAtPrice} discountPercentage={selected.product.discountPercentage} quantity={selected.quantity} color2='text-[#4E2FD2]' color1='text-[#6F7882]' />
                 </div>
             </div>
         </div>

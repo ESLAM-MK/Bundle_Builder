@@ -83,8 +83,8 @@ const ReviewPanel = () => {
                             <div className="flex flex-col justify-end md:flex-row lg:flex-col md:justify-between md:items-center lg:items-end lg:justify-end gap-[8px] shrink-0 w-full">
                                 <div className='flex justify-end'> <span className='bg-[#4E2FD2] px-[8px] py-[5px] rounded-[3px]  text-[12px] leading-[100%] text-[#FFFFFF] tracking-[-5%] font-["Gilroy-Medium"]'>as low as $19.19/mo</span></div>
                                {selectors.length>0 && <div className="flex flex-row items-center gap-[8px] justify-end ">
-                                    <span className="align-middle text-center text-[18px] leading-[20px] tracking-[0.25%] font-['Gilroy-Medium'] font-[400] text-[#6F7882] line-through">{beforeDiscountCalc(selectors).toFixed(2)}</span>
-                                    <span className="text-[24px] leading-[32px] tracking-[-0.13%] align-middle text-right font-[400] font-['Gilroy-Bold'] text-[#4E2FD2]">{TotalPrice(selectors).toFixed(2)}</span>
+                                    <span className="align-middle text-center text-[18px] leading-[20px] tracking-[0.25%] font-['Gilroy-Medium'] font-[400] text-[#6F7882] line-through">{`$${beforeDiscountCalc(selectors).toFixed(2)}`}</span>
+                                    <span className="text-[24px] leading-[32px] tracking-[-0.13%] align-middle text-right font-[400] font-['Gilroy-Bold'] text-[#4E2FD2]">{`$${TotalPrice(selectors).toFixed(2)}`}</span>
                                 </div>}
                             </div>
                         </div>

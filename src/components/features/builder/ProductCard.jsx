@@ -70,7 +70,7 @@ const ProductCard = ({ product }) => {
                             </button>
                         </div>
                         <div className={`flex flex-row lg:flex-col items-center md:p-r-[5px]  justify-center lg:items-end gap-[6px] lg:gap-[3px]  flex-1`}>
-                            <PriceTag compareAtPrice={product.compareAtPrice} discountPercentage={product.discountPercentage} />
+                            <PriceTag compareAtPrice={product.compareAtPrice} discountPercentage={product.discountPercentage} color1='text-[#D8392B]' color2='text-[#575757]' />
                         </div>
                     </div>
                 </div>
