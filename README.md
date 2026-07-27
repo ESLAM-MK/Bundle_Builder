@@ -87,3 +87,10 @@ Memoization: Components like AccordionStep use React.memo to prevent unnecessary
 
 Derived Calculations: Calculations inside ReviewPanel utilize useMemo for grouping categories dynamically based on selectors.
 
+**screens:**
+***-desktop:***
+<img width="1869" height="898" alt="desktop f 1" src="https://github.com/user-attachments/assets/3a7c3c76-4f2c-4bd9-9662-055e817d410e" />
+***-tablet:***
+<img width="1254" height="853" alt="tablet f 2" src="https://github.com/user-attachments/assets/677fc41d-b184-444b-a001-64582233da28" />
+***phone:***
+<img width="371" height="825" alt="phone f1" src="https://github.com/user-attachments/assets/73102d3e-ffac-4187-8a70-47dcf5c23c99" />
