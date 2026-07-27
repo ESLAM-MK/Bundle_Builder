@@ -4,6 +4,7 @@ Prerequisites:
 - npm or yarn 
 
 ***1. Clone the repository:***:
+
     - git clone https://github.com/ESLAM-MK/Bundle_Builder.git
     
     - cd Bundle_Builder
