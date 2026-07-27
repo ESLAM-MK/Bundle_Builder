@@ -9,8 +9,6 @@ import store from './store/store.js'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 const queryClient = new QueryClient()
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <Provider store={store}>

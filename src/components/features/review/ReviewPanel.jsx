@@ -1,6 +1,29 @@
-import React from 'react';
-
+import React, { useCallback, useMemo } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { beforeDiscountCalc, calculatePrice, TotalPrice } from '../../../utils/priceCalc';
+import { saveSystem, updateQuantity } from '../../../store/slices/bundleSlice';
+import ReviewItem from './ReviewItem';
+import { v4 as uuidv4 } from "uuid" // to make unique id for each element
 const ReviewPanel = () => {
+    const dispatch = useDispatch()
+    const selectors = useSelector(state => state.bundle.selectors)
+    const changeQuantity = useCallback((product, actionType) => { // change current quantity
+        dispatch(updateQuantity({ product, actionType }))
+    }, [dispatch])
+
+    const groupedCategories = useMemo(() => { // useMemo to prevent repeating the measurements without changes selectors
+        return selectors.reduce((acc, item) => {
+            const category = item.product.category
+            if (!acc[category]) acc[category] = []
+            acc[category].push(item)
+            return acc
+        }, {})
+    }, [selectors])
+
+    const saveMySystem = () => {
+        dispatch(saveSystem())
+    }
+
     return (
         <div className="bg-[#EDF4FF] rounded-[10px]  py-[15px] flex flex-col gap-[5px]">
             <span className="uppercase font-['Gilroy-Medium'] px-[15px] text-[12px] tracking-[1.6px] ">
@@ -12,39 +35,12 @@ const ReviewPanel = () => {
                     <p className="leading-[130%]  tracking-[0.6px] font-['Gilroy-Medium'] text-[14px] text-[#1F1F1FBF] font-[400]">
                         Review your personalized protection system designed to keep what matters most safe.
                     </p>
-                <div className='border-t-[1px] border-[#CED6DE] flex flex-col gap-[8px]'>
-                    <h4 className="mt-[16px] font-['Gilroy-Regular'] text-[#A8B2BD] text-[12px] uppercase leading-[16px] tracking-[3%] font-[400]">CAMERAS</h4>
-                    <div className="flex flex-row justify-between items-center w-full gap-[12px]">
-                        <div className="flex flex-row items-center justify-start gap-[12px] min-w-0 flex-1">
-                            <div className="w-[41px] h-[41px] bg-white shrink-0 rounded-[5px] overflow-hidden flex items-center justify-center">
-                                <img src="/images/Wyze Cam v4.png" alt="product" className="w-[41px] h-[41px] rounded-[5px] object-cover" />
-                            </div>
-                            <h3 className="font-['Gilroy-Medium'] font-[400] text-[14px] leading-[18px] text-[#0B0D10] break-words">
-                                Wyze Sense Motion Sensor
-                            </h3>
-                        </div>
-                        <div className="flex flex-row justify-end items-center gap-[16px] shrink-0">
-                            <div className="flex items-center justify-center gap-[10px] py-[4px] rounded-[4px] w-[80px] select-none">
-                                <button className="border-[2px] border-[#E6EBF0] h-[20px] w-[20px] text-[16px] font-bold text-center cursor-pointer bg-[#FFFFFF] text-xs leading-none rounded-[4px] flex items-center justify-center pb-[2px]">
-                                    -
-                                </button>
-                                <span className="font-['Gilroy-Medium'] font-[400] text-[16px] leading-[20px] text-[#0B0D10] cursor-default flex items-center justify-center">
-                                    2
-                                </span>
-                                <button className="h-[20px] w-[20px] text-center cursor-pointer bg-[#F0F4F7] text-[16px] font-bold leading-none rounded-[4px] select-none flex items-center justify-center pb-[1px]">
-                                    +
-                                </button>
-                            </div>
-                            <div className="flex flex-col items-end justify-center">
-                                <span className="text-[14px] font-[400] text-right line-through text-[#6F7882] font-['Gilroy-Medium']  leading-[16px] align-middle tracking-[5%]">$35.98</span>
-                                <span className="text-[14px] font-bold text-right font-['Gilroy-Regular'] text-[#4E2FD2]">
-                                    $59.98
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                    <div className="flex flex-row justify-between items-center w-full gap-[12px] pt-[15px]">
+                    {Object.entries(groupedCategories).map(([categoryName, items]) => (
+                        <div key={uuidv4()} className='border-t-[1px] border-[#CED6DE] flex flex-col gap-[8px]'>
+                            <h4 className="mt-[16px] font-['Gilroy-Regular'] text-[#A8B2BD] text-[12px] uppercase leading-[16px] tracking-[3%] font-[400]">{categoryName}</h4>
+                            {items.map((s) => <ReviewItem key={uuidv4()} selected={s} />)}
+                        </div>))}
+                    {selectors.length > 0 && <div className="  border-t-[1px] border-[#CED6DE] flex flex-row justify-between items-center w-full gap-[12px] pt-[15px]">
                         <div className="flex flex-row items-center justify-start gap-[12px] min-w-0 flex-1">
                             <div className="w-[41px] h-[41px] bg-white shrink-0 rounded-[5px] overflow-hidden flex items-center justify-center">
                                 <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -65,49 +61,49 @@ const ReviewPanel = () => {
                                 </span>
                             </div>
                         </div>
-                    </div>
+                    </div>}
                 </div>
                 <div className='border-t-[1px] border-[#CED6DE] flex flex-col gap-[8px]'>
                 </div>
                 <div className='flex flex-col gap-[8px] md:w-[50%] lg:w-[100%]'>
-                <div className=' flex flex-col  gap-[8px]'>
-                    <div className="flex flex-row md:flex-col lg:flex-row justify-between items-center w-full gap-[12px] pt-[15px]">
-                        <div className="flex flex-row items-center justify-between gap-[12px] min-w-0 flex-1">
-                            <div className="w-[78px] h-[78px] md:w-[131px] md:h-[131px] lg:w-[78px] lg:h-[78px]  shrink-0  overflow-hidden flex items-center justify-center">
-                                <img src='/images/Badge.png' className=''></img>
+                    <div className=' flex flex-col  gap-[8px]'>
+                        <div className="flex flex-row md:flex-col lg:flex-row justify-between items-center w-full gap-[12px] pt-[15px]">
+                            <div className="flex flex-row items-center justify-between gap-[12px] min-w-0 flex-1">
+                                <div className="w-[78px] h-[78px] md:w-[131px] md:h-[131px] lg:w-[78px] lg:h-[78px]  shrink-0  overflow-hidden flex items-center justify-center">
+                                    <img src='/images/Badge.png' className=''></img>
+                                </div>
+                                <div className="hidden md:inline lg:hidden text-[#1F1F1F] align-middle tracking-[0.6px] flex flex-col py-[25.5px] font-['Gilroy-SemiBold'] font-[400] text-[18px] leading-[110.00000000000001%]">
+                                    30-day hassle-free returns
+                                    <span className='font-["Gilroy-Regular"] text-[18px] align-middle tracking-[0.6px]'>
+                                        <pre>                     </pre>
+                                    </span>
+                                    If you're not totally in love with the product, we will refund you 100%.
+                                </div>
                             </div>
-                            <div className="hidden md:inline lg:hidden text-[#1F1F1F] align-middle tracking-[0.6px] flex flex-col py-[25.5px] font-['Gilroy-SemiBold'] font-[400] text-[18px] leading-[110.00000000000001%]">
-                               30-day hassle-free returns
-                                <span className='font-["Gilroy-Regular"] text-[18px] align-middle tracking-[0.6px]'>
-                                    <pre>                     </pre>
-                                </span>
-                         If you're not totally in love with the product, we will refund you 100%.
+                            <div className="flex flex-col justify-end md:flex-row lg:flex-col md:justify-between md:items-center lg:items-end lg:justify-end gap-[8px] shrink-0 w-full">
+                                <div className='flex justify-end'> <span className='bg-[#4E2FD2] px-[8px] py-[5px] rounded-[3px]  text-[12px] leading-[100%] text-[#FFFFFF] tracking-[-5%] font-["Gilroy-Medium"]'>as low as $19.19/mo</span></div>
+                                <div className="flex flex-row items-center gap-[8px] justify-end ">
+                                    <span className="align-middle text-center text-[18px] leading-[20px] tracking-[0.25%] font-['Gilroy-Medium'] font-[400] text-[#6F7882] line-through">{beforeDiscountCalc(selectors).toFixed(2)}</span>
+                                    <span className="text-[24px] leading-[32px] tracking-[-0.13%] align-middle text-right font-[400] font-['Gilroy-Bold'] text-[#4E2FD2]">{TotalPrice(selectors).toFixed(2)}</span>
+                                </div>
                             </div>
                         </div>
-                        <div className="flex flex-col justify-end md:flex-row lg:flex-col md:justify-between md:items-center lg:items-end lg:justify-end gap-[8px] shrink-0 w-full">
-                            <div className='flex justify-end'> <span className='bg-[#4E2FD2] px-[8px] py-[5px] rounded-[3px]  text-[12px] leading-[100%] text-[#FFFFFF] tracking-[-5%] font-["Gilroy-Medium"]'>as low as $19.19/mo</span></div>
-                            <div className="flex flex-row items-center gap-[8px] justify-end ">
-                                <span className="align-middle text-center text-[18px] leading-[20px] tracking-[0.25%] font-['Gilroy-Medium'] font-[400] text-[#6F7882] line-through">$238.81</span>
-                                <span className="text-[24px] leading-[32px] tracking-[-0.13%] align-middle text-right font-[400] font-['Gilroy-Bold'] text-[#4E2FD2]">$187.89</span>
-                            </div>
+
+
+                        <div className="flex flex-col">
+                            <p className="text-[12px] flex flex-col gap-[4px] font-['Gilroy-SemiBold'] align-middle leading-[100%] tracking-[-0.06px] text-[#0AA288] pt-[10px] pb-[4px] text-center">
+                                Congrats! You're saving $50.92 on your security bundle!
+                            </p>
+                            <button className="cursor-pointer bg-[#4E2FD2] py-[16px] px-[13px] rounded-[4px] text-[17px] font-['TT Norms Pro'] tracking-[0px] space-x-[9px] text-center align-middle leading-[100%] text-[#FFFFFF]">  Checkout
+                            </button>
+
                         </div>
                     </div>
-                
-
-                <div className="flex flex-col">
-                    <p className="text-[12px] flex flex-col gap-[4px] font-['Gilroy-SemiBold'] align-middle leading-[100%] tracking-[-0.06px] text-[#0AA288] pt-[10px] pb-[4px] text-center">
-                        Congrats! You're saving $50.92 on your security bundle!
-                    </p>
-                    <button className="cursor-pointer bg-[#4E2FD2] py-[16px] px-[13px] rounded-[4px] text-[17px] font-['TT Norms Pro'] tracking-[0px] space-x-[9px] text-center align-middle leading-[100%] text-[#FFFFFF]">  Checkout
-                    </button>
-
-                </div>
-                </div>
-                <div className='flex flex-col '>
-                    <button className="cursor-pointer text-center text-[12px] md:text-[14px] text-[#484848] decoration-solid font-[400] underline font-['Gilroy-RegularItalic'] leading-[120%]  tracking-[-0.02px]">
-                        Save my system for later
-                    </button>
-                </div>
+                    <div className='flex flex-col '>
+                        <button onClick={() => saveMySystem()} className="cursor-pointer text-center text-[12px] md:text-[14px] text-[#484848] decoration-solid font-[400] underline font-['Gilroy-RegularItalic'] leading-[120%]  tracking-[-0.02px]">
+                            Save my system for later
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

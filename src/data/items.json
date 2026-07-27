@@ -2,9 +2,11 @@
    {
   "steps":  [
     {
-      "stepNo": 1, "logo": "camera",
+      "stepNo": 1,
+       "logo": "camera",
       "title": "Choose your cameras",
       "nextTitle": "Choose your plan",
+       "category":"cameras",
       "products": [
         {
           "id": "1",
@@ -17,9 +19,9 @@
           "image": "/images/Wyze Cam v4.png",
           "hasVariants": true,
           "variants": [
-            { "id": "1-white", "title": "Wyze Cam v4 White","category":"cameras","color":"White", "image": "/images/white1.png" },
-            { "id": "1-grey", "title": "Wyze Cam v4 Grey","category":"cameras","color":"Grey","image": "/images/Grey1.png" },
-            { "id": "1-black", "title": "Wyze Cam v4 Black","category":"cameras","color":"Black", "image": "/images/black1.png" }
+            { "id": "1-white", "category":"cameras","color":"White", "image": "/images/white1.png" },
+            { "id": "1-grey","category":"cameras","color":"Grey","image": "/images/Grey1.png" },
+            { "id": "1-black","category":"cameras","color":"Black", "image": "/images/black1.png" }
           ]
         },
         {
@@ -33,8 +35,8 @@
           "image": "/images/Wyze Cam Pan v3.png",
           "hasVariants": true,
           "variants": [
-            { "id": "2-white", "title": "Wyze Cam Pan v3 White","category":"cameras","color":"White" ,"image": "/images/white2.png" },
-            { "id": "2-black", "title": "Wyze Cam Pan v3 Black","category":"cameras","color":"Black" ,"image": "/images/black2.png" }
+            { "id": "2-white", "category":"cameras","color":"White" ,"image": "/images/white2.png" },
+            { "id": "2-black", "category":"cameras","color":"Black" ,"image": "/images/black2.png" }
           ]
         },
         {
@@ -48,8 +50,8 @@
           "image": "/images/Wyze Cam Floodlight v2.png",
           "hasVariants": true,
           "variants": [
-            { "id": "3-white", "title": "Wyze Cam Floodlight v2 White","category":"cameras","color":"White" ,"image": "/images/white3.png" },
-            { "id": "3-black", "title": "Wyze Cam Floodlight v2 Black","category":"cameras", "color":"Black","image" :"/images/black3.png" }
+            { "id": "3-white","category":"cameras","color":"White" ,"image": "/images/white3.png" },
+            { "id": "3-black","category":"cameras", "color":"Black","image" :"/images/black3.png" }
           ]
         },
         {
@@ -75,8 +77,8 @@
           "image": "/images/Wyze Battery Cam Pro.png",
           "hasVariants": true,
           "variants": [
-            { "id": "5-white", "title": "Wyze Battery Cam Pro White","category":"cameras","color":"White" , "image":"/images/white5.png" },
-            { "id": "5-black", "title": "Wyze Battery Cam Pro Black","category":"cameras", "color":"Black", "image":"/images/black5.png" }
+            { "id": "5-white", "category":"cameras","color":"White" , "image":"/images/white5.png" },
+            { "id": "5-black", "category":"cameras", "color":"Black", "image":"/images/black5.png" }
           ]
         }
       ]
@@ -86,6 +88,7 @@
       "stepNo": 2, "logo":"shield"
       , "title": "Choose your plan",
       "nextTitle": "Choose your sensors",
+       "category":"plan",
       "products": [
         {
           "id": "6",
@@ -96,7 +99,7 @@
           "discountPercentage": 23.09,
           "compareAtPrice": 12.99,
           "isMonthly": true,
-          "image": "https://placehold.co/150x150/f3f4f6/1f2937?text=Cam+Unlimited",
+          "image": "/images/plan.PNG",
           "hasVariants": false,
           "variants": []
         }
@@ -106,6 +109,7 @@
       "stepNo": 3, "logo": "sensor"
       , "title": "Choose your sensors",
       "nextTitle": "Add extra protection",
+       "category":"sensors",
       "products": [
         {
           "id": "7",
@@ -134,8 +138,10 @@
       ]
     },
     {
-      "stepNo": 4, "logo": "protection"
-      , "title": "Add extra protection",
+      "stepNo": 4,
+       "logo": "protection",
+       "title": "Add extra protection",
+             "category":"accessories",
       "products": [
         {
           "id": "9",
