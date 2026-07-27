@@ -7,12 +7,13 @@ Prerequisites:
     - git clone https://github.com/ESLAM-MK/Bundle_Builder.git
     - cd Bundle_Builder
     
- ***2. Install dependencies***
+ ***2. Install dependencies***:
    - npm install
-   - 
-***3. Start the Server (json server)***
+
+***3. Start the Server (json server)***:
      - npm run server
-***4. Start the Development Server***
+     
+***4. Start the Development Server***:
      - npm run dev
        
 **Smart Home Security Bundle Builder**
