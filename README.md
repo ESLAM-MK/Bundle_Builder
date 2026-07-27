@@ -1,6 +1,8 @@
 **Project Setup & Installation**
 Prerequisites:
+
 - Node.js (v18.x or higher)
+  
 - npm or yarn 
 
 ***1. Clone the repository:***:
@@ -10,12 +12,15 @@ Prerequisites:
     - cd Bundle_Builder
     
  ***2. Install dependencies***:
+ 
    - npm install
 
 ***3. Start the Server (json server)***:
+
      - npm run server
      
 ***4. Start the Development Server***:
+
      - npm run dev
        
 **Smart Home Security Bundle Builder**
